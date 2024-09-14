@@ -1,0 +1,24 @@
+.testBtn {
+  width: 100px;
+  height: 100px;
+  color: orange;
+  background-color: purple;
+  display: block;
+  transition: all 0.8s ease-in-out;
+}
+.testBtn:hover {
+  opacity: 0.5;
+  transition: all 0.8s ease-in-out;
+}
+
+.testBtnClicked {
+  width: 100px;
+  height: 100px;
+  color: purple;
+  background-color: orange;
+  color: blue;
+  display: block;
+  border-radius: 50%;
+  transform: rotate(360deg);
+  transition: all 0.8s ease-in-out;
+}/*# sourceMappingURL=testStyle.module.css.map */

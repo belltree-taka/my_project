@@ -1,0 +1,27 @@
+.TodoApp {
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    margin-inline: auto;
+    border: 1px solid black;
+    width: 80%;
+}
+.box{
+    padding: 10px;
+    border: 1px solid black;
+}
+.TodoListTitle {
+    margin-bottom: 10px;
+}
+.reminder{
+    margin: 30px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+.completeBtn{
+    margin-right: 5px;
+}
+.list{
+    font-weight: normal;
+    list-style-type: none;
+}
