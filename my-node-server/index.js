@@ -1,19 +1,18 @@
 const express = require('express');
-const basicAuth = require('express-basic-auth');
+const path = require('path');
 const app = express();
 
-const users = {
-  'takaharu': 'vitamine1'
-};
+// Reactのビルドされた静的ファイルを提供
+app.use(express.static(path.join(__dirname, '../takaharu-no-react/dist')));
 
-app.use(basicAuth({
-  users: users,
-  challenge: true,
-  unauthorizedResponse: 'Unauthorized'
-}));
-
-app.use(express.static('dist')); // ビルドディレクトリを指定
-
-app.listen(3000, () => {
-  console.log('Server running on port 3000');
+// ReactのSPAのため、全てのリクエストをindex.htmlにリダイレクト
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../takaharu-no-react/dist/index.html'));
 });
+
+// サーバーを起動
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
